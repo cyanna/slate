@@ -1,15 +1,11 @@
 ---
-title: API Reference
+title: EDluminate Institution API
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
-  - ruby
-  - python
-  - javascript
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
+  - <a href='http://cyanna.com'>EDluminate powered by Cyanna</a>
 
 includes:
   - errors
@@ -19,221 +15,73 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome to the EDluminate Institution API. This API is provided to client institutions as a means to manage their EDlumiante data in whatever ways they need. These APIs are in Beta testing and are still in current development. Please feel more than free to contact Cyanna, EDluminate, and the technology team with any suggestions, problems, questions, etc.
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+Currently this API handles funneling leads into the EDluminate system. The next major API coming soon is the ability to export/pull data out of EDluminate for use in other systems, such as your Student Information System.
 
-This example API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to edit it and use it as a base for your own API's documentation.
+# Incoming Leads
 
-# Authentication
-
-> To authorize, use this code:
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
+> To funnel leads into the EDluminate application:
 
 ```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
+# With shell, you can just pass the correct parameters with each request
+curl "YOUR_INSTITUTION_SUBDOMAIN.edluminate.com/api/v1/contact_student_enrollment"
 ```
 
-```javascript
-const kittn = require('kittn');
+> The above command accepts JSON params structured like this:
 
-let api = kittn.authorize('meowmeowmeow');
+```json
+[
+  {
+    "email": "newlead@example.com",
+    "first_name": "New",
+    "last_name": "Lead",
+    "phone_number": "9371234567",
+    "prefered_contact_method": "email",
+    "zipcode": "45440",
+    "best_contact_time": "evening",
+    "campus_id": "1",
+    "source": "online",
+    "notify": "false",
+    "program_id": "2",
+    "api_access_key": "meowmeowmeow"
+  }
+]
 ```
 
 > Make sure to replace `meowmeowmeow` with your API key.
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+EDluminate uses API keys to allow access to the API. You can request an API key by contacting Cyanna/EDluminate.
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+EDluminate expects for the API key to be included in all API requests to the server in the parameters named:
 
-`Authorization: meowmeowmeow`
+`'api_access_key': 'meowmeowmeow'`
 
 <aside class="notice">
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
 
-# Kittens
-
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
-
-This endpoint retrieves all kittens.
-
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`GET http://YOUR_INSTITUTION_SUBDOMAIN.edluminate.com/api/v1/contact_student_enrollment`
+
+<aside class="notice">
+You must replace `YOUR_INSTITUTION_SUBDOMAIN` with your institutions EDlumiante subdomain.
+</aside>
 
 ### Query Parameters
 
-Parameter | Default | Description
+Parameter | Required | Description
 --------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
-```
-
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
-
-## Delete a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -X DELETE
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "deleted" : ":("
-}
-```
-
-This endpoint deletes a specific kitten.
-
-### HTTP Request
-
-`DELETE http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
-
+api_access_key | true | Institution API Access Key
+email | true | New Lead's Email
+first_name | true | New Lead's First Name
+last_name | true | New Lead's Last Name
+phone_number | true | New Lead's Phone Number (with area code)
+campus_id | true | New Lead's Campus Preference. Must be ID of campus from EDluminate application.
+program_id | true | New Leads's Program Preference. Must be ID of program from EDluminate application.
+preferred_contact_method | true | New Lead's Preferred Means of Contact. Must be `email` or `mobile_phone`
+zipcode | false | New Lead's Zip Code
+best_contact_time | false | New Lead's Preferred time of day to Contact. Must be `morning`, `afternoon`, or `evening`
+source | false | Source of New Lead Information. Options are: `online`, `facebook`, `google_adwords`, `linkedin`, `referral`, `personally_developed_lead`, `government`, `radio`, `print`, `event`, `phone`, `email`, `live_chat`, `tv`, `direct_mail`, `military`, `walk_in`, `ad_hoc`, `other`.
+notify | false | Boolean that indicates if the student should be contacted by their preferred means. Must be `true` or `false`
