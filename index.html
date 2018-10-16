@@ -252,7 +252,7 @@
 <p>To funnel leads into the EDluminate application:</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct parameters with each request</span>
-curl <span class="s2">"YOUR_INSTITUTION_SUBDOMAIN.edluminate.com/api/v1/contact_student_enrollment"</span>
+curl -d --data <span class="s1">'{params}'</span> <span class="s2">"YOUR_INSTITUTION_SUBDOMAIN.edluminate.com/api/v1/contact_student_enrollment"</span>
 </code></pre>
 <blockquote>
 <p>The above command accepts JSON params structured like this:</p>
@@ -288,7 +288,7 @@ curl <span class="s2">"YOUR_INSTITUTION_SUBDOMAIN.edluminate.com/api/v1/contact_
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://YOUR_INSTITUTION_SUBDOMAIN.edluminate.com/api/v1/contact_student_enrollment</code></p>
+<p><code>POST http://YOUR_INSTITUTION_SUBDOMAIN.edluminate.com/api/v1/contact_student_enrollment</code></p>
 
 <aside class="notice">
 You must replace `YOUR_INSTITUTION_SUBDOMAIN` with your institutions EDlumiante subdomain.
@@ -338,7 +338,7 @@ You must replace `YOUR_INSTITUTION_SUBDOMAIN` with your institutions EDlumiante 
 </tr>
 <tr>
 <td>preferred_contact_method</td>
-<td>true</td>
+<td>false</td>
 <td>New Lead&#39;s Preferred Means of Contact. Must be <code>email</code> or <code>mobile_phone</code></td>
 </tr>
 <tr>
