@@ -25,7 +25,7 @@ Currently this API handles funneling leads into the EDluminate system. The next 
 
 ```shell
 # With shell, you can just pass the correct parameters with each request
-curl "YOUR_INSTITUTION_SUBDOMAIN.edluminate.com/api/v1/contact_student_enrollment"
+curl -d --data '{params}' "YOUR_INSTITUTION_SUBDOMAIN.edluminate.com/api/v1/contact_student_enrollment"
 ```
 
 > The above command accepts JSON params structured like this:
@@ -63,7 +63,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 
 ### HTTP Request
 
-`GET http://YOUR_INSTITUTION_SUBDOMAIN.edluminate.com/api/v1/contact_student_enrollment`
+`POST http://YOUR_INSTITUTION_SUBDOMAIN.edluminate.com/api/v1/contact_student_enrollment`
 
 <aside class="notice">
 You must replace `YOUR_INSTITUTION_SUBDOMAIN` with your institutions EDlumiante subdomain.
@@ -80,7 +80,7 @@ last_name | true | New Lead's Last Name
 phone_number | true | New Lead's Phone Number (with area code)
 campus_id | true | New Lead's Campus Preference. Must be ID of campus from EDluminate application.
 program_id | true | New Leads's Program Preference. Must be ID of program from EDluminate application.
-preferred_contact_method | true | New Lead's Preferred Means of Contact. Must be `email` or `mobile_phone`
+preferred_contact_method | false | New Lead's Preferred Means of Contact. Must be `email` or `mobile_phone`
 zipcode | false | New Lead's Zip Code
 best_contact_time | false | New Lead's Preferred time of day to Contact. Must be `morning`, `afternoon`, or `evening`
 source | false | Source of New Lead Information. Options are: `online`, `facebook`, `google_adwords`, `linkedin`, `referral`, `personally_developed_lead`, `government`, `radio`, `print`, `event`, `phone`, `email`, `live_chat`, `tv`, `direct_mail`, `military`, `walk_in`, `ad_hoc`, `other`.
