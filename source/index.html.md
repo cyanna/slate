@@ -44,6 +44,7 @@ curl -d --data '{params}' "YOUR_INSTITUTION_SUBDOMAIN.edluminate.com/api/v1/cont
     "source": "online",
     "notify": "false",
     "program_id": "2",
+    "note": "Note via API",
     "api_access_key": "meowmeowmeow"
   }
 ]
@@ -80,6 +81,7 @@ last_name | true | New Lead's Last Name
 phone_number | true | New Lead's Phone Number (with area code)
 campus_id | true | New Lead's Campus Preference. Must be ID of campus from EDluminate application.
 program_id | true | New Leads's Program Preference. Must be ID of program from EDluminate application.
+note | false | Note or comment to be associated with the new lead.
 preferred_contact_method | false | New Lead's Preferred Means of Contact. Must be `email` or `mobile_phone`
 zipcode | false | New Lead's Zip Code
 best_contact_time | false | New Lead's Preferred time of day to Contact. Must be `morning`, `afternoon`, or `evening`
