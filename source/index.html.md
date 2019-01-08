@@ -42,6 +42,7 @@ curl -d --data '{params}' "YOUR_INSTITUTION_SUBDOMAIN.edluminate.com/api/v1/cont
     "best_contact_time": "evening",
     "campus_id": "1",
     "source": "online",
+    "vendor_source": "Radio Spot",
     "notify": "false",
     "program_id": "2",
     "note": "Note via API",
@@ -86,4 +87,5 @@ preferred_contact_method | false | New Lead's Preferred Means of Contact. Must b
 zipcode | false | New Lead's Zip Code
 best_contact_time | false | New Lead's Preferred time of day to Contact. Must be `morning`, `afternoon`, or `evening`
 source | false | Source of New Lead Information. Options are: `online`, `facebook`, `google_adwords`, `linkedin`, `referral`, `personally_developed_lead`, `government`, `radio`, `print`, `event`, `phone`, `email`, `live_chat`, `tv`, `direct_mail`, `military`, `walk_in`, `ad_hoc`, `other`.
+vendor_source | false | Custom vendor source field. String/Text field that can be anything i.e. Radio Spot, Email Campaign 1/6/19, etc
 notify | false | Boolean that indicates if the student should be contacted by their preferred means. Must be `true` or `false`
