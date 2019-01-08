@@ -268,6 +268,7 @@ curl -d --data <span class="s1">'{params}'</span> <span class="s2">"YOUR_INSTITU
     </span><span class="s2">"best_contact_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"evening"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"campus_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"online"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"vendor_source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Radio Spot"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"notify"</span><span class="p">:</span><span class="w"> </span><span class="s2">"false"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"program_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Note via API"</span><span class="p">,</span><span class="w">
@@ -361,6 +362,11 @@ You must replace `YOUR_INSTITUTION_SUBDOMAIN` with your institutions EDlumiante 
 <td>source</td>
 <td>false</td>
 <td>Source of New Lead Information. Options are: <code>online</code>, <code>facebook</code>, <code>google_adwords</code>, <code>linkedin</code>, <code>referral</code>, <code>personally_developed_lead</code>, <code>government</code>, <code>radio</code>, <code>print</code>, <code>event</code>, <code>phone</code>, <code>email</code>, <code>live_chat</code>, <code>tv</code>, <code>direct_mail</code>, <code>military</code>, <code>walk_in</code>, <code>ad_hoc</code>, <code>other</code>.</td>
+</tr>
+<tr>
+<td>vendor_source</td>
+<td>false</td>
+<td>Custom vendor source field. String/Text field that can be anything i.e. Radio Spot, Email Campaign 1/6/19, etc</td>
 </tr>
 <tr>
 <td>notify</td>
