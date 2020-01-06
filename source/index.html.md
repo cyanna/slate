@@ -50,6 +50,8 @@ curl -d --data '{params}' "YOUR_INSTITUTION_SUBDOMAIN.edluminate.com/api/v1/cont
     "city": "Anytown",
     "state": "OH",
     "zipcode": "45402",
+    "high_school": "Miami Valley School",
+    "high_school_graduation": "2001",
     "api_access_key": "meowmeowmeow"
   }
 ]
@@ -89,6 +91,7 @@ program_id | true | New Leads's Program Preference. Must be ID of program from E
 note | false | Note or comment to be associated with the new lead.
 preferred_contact_method | false | New Lead's Preferred Means of Contact. Must be `email` or `mobile_phone`
 mailing_address | false | New Lead's Street Address
+second_mailing_address | false | New Lead's Second Street Address
 city | false | New Lead's City
 state | false | New Lead's State
 zipcode | false | New Lead's Zip Code
@@ -96,3 +99,5 @@ best_contact_time | false | New Lead's Preferred time of day to Contact. Must be
 source | false | Source of New Lead Information. Options are: `online`, `facebook`, `google_adwords`, `linkedin`, `referral`, `personally_developed_lead`, `government`, `radio`, `print`, `event`, `phone`, `email`, `live_chat`, `tv`, `direct_mail`, `military`, `walk_in`, `ad_hoc`, `other`.
 vendor_source | false | Custom vendor source field. String/Text field that can be anything i.e. Radio Spot, Email Campaign 1/6/19, etc
 notify | false | Boolean that indicates if the student should be contacted by their preferred means. Must be `true` or `false`
+high_school | false | High School name
+high_school_graduation | false | High School Graduation Year
