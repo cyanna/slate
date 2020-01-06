@@ -276,6 +276,8 @@ curl -d --data <span class="s1">'{params}'</span> <span class="s2">"YOUR_INSTITU
     </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Anytown"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OH"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"45402"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"high_school"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Miami Valley School"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"high_school_graduation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2001"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"api_access_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"meowmeowmeow"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
@@ -358,6 +360,11 @@ You must replace `YOUR_INSTITUTION_SUBDOMAIN` with your institutions EDlumiante 
 <td>New Lead&#39;s Street Address</td>
 </tr>
 <tr>
+<td>second_mailing_address</td>
+<td>false</td>
+<td>New Lead&#39;s Second Street Address</td>
+</tr>
+<tr>
 <td>city</td>
 <td>false</td>
 <td>New Lead&#39;s City</td>
@@ -391,6 +398,16 @@ You must replace `YOUR_INSTITUTION_SUBDOMAIN` with your institutions EDlumiante 
 <td>notify</td>
 <td>false</td>
 <td>Boolean that indicates if the student should be contacted by their preferred means. Must be <code>true</code> or <code>false</code></td>
+</tr>
+<tr>
+<td>high_school</td>
+<td>false</td>
+<td>High School name</td>
+</tr>
+<tr>
+<td>high_school_graduation</td>
+<td>false</td>
+<td>High School Graduation Year</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
