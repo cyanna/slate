@@ -272,6 +272,10 @@ curl -d --data <span class="s1">'{params}'</span> <span class="s2">"YOUR_INSTITU
     </span><span class="s2">"notify"</span><span class="p">:</span><span class="w"> </span><span class="s2">"false"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"program_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Note via API"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mailing_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123 Main St"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Anytown"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OH"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"45402"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"api_access_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"meowmeowmeow"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
@@ -347,6 +351,21 @@ You must replace `YOUR_INSTITUTION_SUBDOMAIN` with your institutions EDlumiante 
 <td>preferred_contact_method</td>
 <td>false</td>
 <td>New Lead&#39;s Preferred Means of Contact. Must be <code>email</code> or <code>mobile_phone</code></td>
+</tr>
+<tr>
+<td>mailing_address</td>
+<td>false</td>
+<td>New Lead&#39;s Street Address</td>
+</tr>
+<tr>
+<td>city</td>
+<td>false</td>
+<td>New Lead&#39;s City</td>
+</tr>
+<tr>
+<td>state</td>
+<td>false</td>
+<td>New Lead&#39;s State</td>
 </tr>
 <tr>
 <td>zipcode</td>
