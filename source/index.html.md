@@ -51,7 +51,7 @@ curl -d --data '{params}' "YOUR_INSTITUTION_SUBDOMAIN.edluminate.com/api/v1/cont
     "state": "OH",
     "zipcode": "45402",
     "high_school": "Miami Valley School",
-    "high_school_graduation": "2001",
+    "high_school_graduation_year": "2001",
     "api_access_key": "meowmeowmeow"
   }
 ]
@@ -71,7 +71,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 
 ### HTTP Request
 
-`POST http://YOUR_INSTITUTION_SUBDOMAIN.edluminate.com/api/v1/contact_student_enrollment`
+`POST https://YOUR_INSTITUTION_SUBDOMAIN.edluminate.com/api/v1/contact_student_enrollment`
 
 <aside class="notice">
 You must replace `YOUR_INSTITUTION_SUBDOMAIN` with your institutions EDlumiante subdomain.
@@ -100,4 +100,4 @@ source | false | Source of New Lead Information. Options are: `online`, `faceboo
 vendor_source | false | Custom vendor source field. String/Text field that can be anything i.e. Radio Spot, Email Campaign 1/6/19, etc
 notify | false | Boolean that indicates if the student should be contacted by their preferred means. Must be `true` or `false`
 high_school | false | High School name
-high_school_graduation | false | High School Graduation Year
+high_school_graduation_year | false | High School Graduation Year
